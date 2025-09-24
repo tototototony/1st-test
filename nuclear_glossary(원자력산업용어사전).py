@@ -1,4 +1,3 @@
-#한국수력원자력(주)_원자력산업 용어사전_20190905
 
 import pandas as pd
 import mariadb
@@ -51,8 +50,7 @@ def main():
         term_kor = row['한글용어'] if pd.notna(row['한글용어']) else None
         abbreviation = row['약어'] if pd.notna(row['약어']) else None
        
-        #id_2,951 노르웨이원자력산업회의 abbreviation 값이 null이었음 (SELECT * FROM nuclear_glossary WHERE abbreviation IS NULL;)
-
+    
 
         cur.execute("""
             INSERT INTO nuclear_glossary (term_eng, term_kor, abbreviation)
@@ -64,5 +62,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-#main()은 프로그램의 **"메인(주요) 실행 부분"**을 담는 함수
+
+
 
